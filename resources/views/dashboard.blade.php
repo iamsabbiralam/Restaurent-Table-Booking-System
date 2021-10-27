@@ -41,7 +41,7 @@
                         </tr>
                         </tbody>
                         @empty
-                        <tr>
+                        <tr>                                    
                             <td colspan="4" class="px-4 py-3 text-center">{{ __('No Table Found') }}</td>
                         </tr>
                         @endforelse
