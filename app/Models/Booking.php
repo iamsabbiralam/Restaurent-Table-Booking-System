@@ -16,8 +16,8 @@ class Booking extends Model
         'end_time',
     ];
 
-    public function tableNames() {
+    public function tableBooked() {
 
-        return $this->belongsTo(Table::class);
+        return $this->belongsTo(Table::class, 'table_id');
     }
 }
