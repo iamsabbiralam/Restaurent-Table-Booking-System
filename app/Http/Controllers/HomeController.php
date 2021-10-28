@@ -11,7 +11,7 @@ class HomeController extends Controller
     public function dashboard()
     {
         $current_time = date('H:i:s');
-        $tableBooking = Booking::where('end_time','<',$current_time)->get();
+        $tableBooking = Booking::where('end_time','<',$current_time)->update(array('status'=>0));
         // dd($tableBooking);
 
         // foreach($tableBooking as $table) {
@@ -23,7 +23,6 @@ class HomeController extends Controller
         // foreach($data['tables'] as $table) {
         //     $data['bookings'] = Booking::with('tableNames')->where('table_id', $table->id)->get();
         // }
-        $data['bookings'] = Booking::with('tableBooked')->get();
         // dd($data);
 
         return view('dashboard', $data);
